@@ -1,3 +1,0 @@
-[submodule "deps/pcre2"]
-	path = deps/pcre2
-	url = https://github.com/PCRE2Project/pcre2

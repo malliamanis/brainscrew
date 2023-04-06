@@ -8,12 +8,11 @@ CC = clang
 LD = clang
 
 CFLAGS =  -std=c11 -Wall -pedantic -Isrc
-CFLAGS += -Ideps/pcre2/src
 
 CFLAGS_DEB = -O0 -g -gdwarf-4
 CFLAGS_REL = -O3
 
-LDFLAGS = deps/build/pcre2/libpcre2-posix.a deps/build/pcre2/libpcre2-8.a
+LDFLAGS =
 
 rwildcard = $(foreach d, $(wildcard $1*), $(call rwildcard, $d/, $2) $(filter $(subst *, %, $2), $d))
 
@@ -23,8 +22,8 @@ SRC         = $(call rwildcard, src, *.c)
 OBJ_DEB     = $(patsubst src/%.c, $(OBJ_DEB_DIR)/%.o.d, $(SRC))
 OBJ_REL     = $(patsubst src/%.c, $(OBJ_REL_DIR)/%.o,   $(SRC))
 
-EXE_REL = build/release/mihalis
-EXE_DEB = build/debug/mihalis
+EXE_REL = build/release/bsc
+EXE_DEB = build/debug/bsc
 
 .PHONY: debug release clean deps cleandeps
 
