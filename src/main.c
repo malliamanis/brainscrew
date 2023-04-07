@@ -145,6 +145,6 @@ static void print_help(void)
 	       "Options:\n"
 	       "  -h   help\n"
 	       "  -c   compile to C\n"
-		   "  -bf  compile to Brainfuck\n"
-		   "  -bsc compile Brainfuck to Brainscrew\n");
+	       "  -bf  compile to Brainfuck\n"
+	       "  -bsc compile Brainfuck to Brainscrew\n");
 }
