@@ -215,8 +215,8 @@ void brainscrew_interpret(const char *src)
 
 	TokenType current;
 
-	for (uint32_t i = 0; tokens[i] != TOKEN_EOF; ++i) {
-		switch (tokens[i]) {
+	for (int32_t i = 0; (current = tokens[i++]) != TOKEN_EOF;) {
+		switch (current) {
 			case TOKEN_INCREMENT:
 				++(*ptr);
 				break;
@@ -254,7 +254,7 @@ void brainscrew_interpret(const char *src)
 				if (*ptr != 0)
 					continue;
 				
-				while ((current = tokens[i++]) != 0) {
+				while ((current = tokens[i++]) != TOKEN_EOF) {
 					if (current == TOKEN_LOOP_START) 
 						++loop_depth;
 					else if (current == TOKEN_LOOP_END) {
@@ -280,7 +280,7 @@ void brainscrew_interpret(const char *src)
 					
 					if (current == TOKEN_LOOP_END) 
 						++loop_depth;
-					else if (i == TOKEN_LOOP_START) {
+					else if (current == TOKEN_LOOP_START) {
 						if (loop_depth == 0) 
 							break;
 						else 
@@ -383,8 +383,6 @@ static TokenType lex_match_token(char *lexeme)
 {
 	if (strcmp(lexeme, "increment") == 0)
 		return TOKEN_INCREMENT;
-	else if (strcmp(lexeme, "decrement") == 0)
-		return TOKEN_DECREMENT;
 	else if (strcmp(lexeme, "decrement") == 0)
 		return TOKEN_DECREMENT;
 	else if (strcmp(lexeme, "left") == 0)

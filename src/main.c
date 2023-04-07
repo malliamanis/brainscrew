@@ -6,8 +6,6 @@
 
 #include "brainscrew.h"
 
-// TODO: add assembly support
-
 static char *read_file(const char *name);
 static void write_file(const char *name, const char *src);
 
@@ -143,8 +141,9 @@ static void print_help(void)
 {
 	printf("Usage: brainscrew [options] files...\n"
 	       "Options:\n"
-	       "  -h   help\n"
-	       "  -c   compile to C\n"
-	       "  -bf  compile to Brainfuck\n"
-	       "  -bsc compile Brainfuck to Brainscrew\n");
+	       "  -h        help\n"
+	       "  -c        compile Brainscrew to C\n"
+	       "  -bf       compile Brainscrew to Brainfuck\n"
+	       "  -bsc      compile Brainfuck to Brainscrew\n"
+	       "  [no flag] interpret Brainscrew\n");
 }
