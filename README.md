@@ -1,5 +1,5 @@
 # Brainscrew
-Brainfuck but with words. Includes a Brainscrew interpreter, a Brainscrew to C compiler, a Brainscrew to Brainfuck and a Brainfuck to Brainscrew Compiler.
+Brainfuck but with words. Includes a Brainscrew interpreter, a Brainscrew to C compiler, a Brainscrew to Brainfuck compiler and a Brainfuck to Brainscrew compiler.
 
 ## How to build
 for debug
